@@ -1,0 +1,7 @@
+1.open task1.html file on browser
+
+
+2.right click on page and open inspect 
+
+
+3.go to console u will see the output
