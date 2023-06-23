@@ -3,7 +3,7 @@
 //         let temperature = 30;
 //         return {
 //             async next() {
-//                 if (temperature >= 29 && !temperature > 40) {
+//                 if (!temperature > 40) {
 //                     await new Promise(reslove => setTimeout(reslove, 1000));
 //                     return{value: temperature + 0.02,done:false};
 //                 }
