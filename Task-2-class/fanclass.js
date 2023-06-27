@@ -44,16 +44,16 @@ class ceilingFan extends fan{
     
 }
 
-const ceilingFan1 =new ceilingFan;
-ceilingFan1.finalPrice(); //1300
+// const ceilingFan1 =new ceilingFan;
+// ceilingFan1.finalPrice(); //1300
 
-console.log(ceilingFan1.printPrivatevalue()); //rounded
-const mainFan = new fan;
-mainFan.printPrivatevalue();
+// console.log(ceilingFan1.printPrivatevalue()); //rounded
+// const mainFan = new fan;
+// mainFan.printPrivatevalue();
 
 
-const tableFan1=new tableFan;
-tableFan1.finalPrice(); //650
+// const tableFan1=new tableFan;
+// tableFan1.finalPrice(); //650
 
 
 
@@ -67,8 +67,5 @@ tableFan1.finalPrice(); //650
 var t = "['performance','errors',['http',{addXRayTraceIdHeader: true}]]";
 
 
-function showResult(t) {
-    var str = 'The "Quoted" chronicles';
-    alert("JSON String : " + t.evalJSON() );
- }
-showResult(t)
+let final = JSON.parse(t.replace(/',/g,'"'));
+ console.log(final);
