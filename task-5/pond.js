@@ -1,6 +1,6 @@
 let increasenIntervId;
 let decreaseIntervId;
-let day;
+let day=true;
 class maintaineWaterTemperature {
     constructor(name, temperature = 30, MaxTemperature = 40, minimumTemperature = 30, day) {
         this.name = name;
@@ -19,11 +19,11 @@ class maintaineWaterTemperature {
         }
     }
     increase() {
-        this.day ? this.temperature = this.temperature + 1.02 : this.temperature = this.temperature + (1.02 / 2);
+        this.day ? this.temperature = this.temperature + 1.02 : this.temperature = this.temperature + (0.02 / 2);
         return `Name of pond is: ${this.name} and the temperature is : ${this.temperature.toFixed(2)}`;
     }
     decrease() {
-        this.day ? this.temperature = this.temperature - 1.01 : this.temperature = this.temperature - (1.01 / 2);
+        this.day ? this.temperature = this.temperature - 1.01 : this.temperature = this.temperature - (0.01 / 2);
            return `Name of pond is: ${this.name} and the temperature is : ${this.temperature.toFixed(2)}`;
     }
 }
