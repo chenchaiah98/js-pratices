@@ -1,51 +1,42 @@
-// const asycIterable = {
-//     async *[Symbol.asyncIterator]() {
-//         let temperature = 30;
-//         return {
-//             async next() {
-//                 if (!temperature > 40) {
-//                     await new Promise(reslove => setTimeout(reslove, 1000));
-//                     return{value: temperature + 0.02,done:false};
-//                 }
-//                 else{
-//                     return{done:true};
-//                 }
-//             }
-//         };
-//     }
-
-// };
-
-
-// async function consumerIterable() {
-//     for await (const value of asycIterable) {
-//         console.log(value);
-//     }
-// }
-// consumerIterable();
-
-
-let temperature=30;
-function checkTemp(temperature){
-    if(temperature >= 30 && temperature <= 40){
-        const a = setTimeout(increase(temperature),1000);
+let increasenIntervId;
+let decreaseIntervId;
+let day;
+class maintaineWaterTemperature {
+    constructor(name, temperature = 30, MaxTemperature = 40, minimumTemperature = 30, day) {
+        this.name = name;
+        this.temperature = temperature;
+        this.MaxTemperature = MaxTemperature;
+        this.minimumTemperature = minimumTemperature;
+        this.day = day;
     }
-    console.log(temperature);
+    checkTemperature() {
+
+        if (this.temperature <= this.MaxTemperature) {
+            return this.increase();
+        }
+        else if (this.temperature >= this.minimumTemperature ) {
+            return this.decrease();
+        }
+    }
+    increase() {
+        this.day ? this.temperature = this.temperature + 1.02 : this.temperature = this.temperature + (1.02 / 2);
+        return `Name of pond is: ${this.name} and the temperature is : ${this.temperature.toFixed(2)}`;
+    }
+    decrease() {
+        this.day ? this.temperature = this.temperature - 1.01 : this.temperature = this.temperature - (1.01 / 2);
+           return `Name of pond is: ${this.name} and the temperature is : ${this.temperature.toFixed(2)}`;
+    }
 }
-// class pond{
-//     constructor(temperature=30){
-//         this.temperature ;
-//        }
-    
-// }
-function increase(temperature){
-    return temperature = temperature + 0.02;
+class pond extends maintaineWaterTemperature {
+    constructor(name, temperature,day) {
+        super(name, temperature);
+        console.log(this.day);
+    }
 }
-function decrease(temperature){
-    return temperature =temperature + 0.01;
-}
-// const pond1 = new pond;
-// console.log(checkTemp(30))
-// for (temperature = 30,temperature <= 40; temperature ++){
-//     checkTemp(temperature);
-// }
+
+
+const pond1 = new pond("myPond1", 31, day = false);
+setInterval(() => {
+    console.log(pond1.checkTemperature());
+}, 1000);
+
