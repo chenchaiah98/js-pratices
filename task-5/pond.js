@@ -38,5 +38,5 @@ class pond extends maintaineWaterTemperature {
 const pond1 = new pond("myPond1", 31, day = false);
 setInterval(() => {
     console.log(pond1.checkTemperature());
-}, 1000);
+}, 5000);
 
