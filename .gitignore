@@ -1,3 +1,5 @@
 apiFetch.js/
 # ignore ALL files in ANY directory named temp
 temp/
+
+typeScript/node_modules/*
