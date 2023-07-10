@@ -1,0 +1,1 @@
+- Write a javascript function to get all village names with dailyEarning more than $5000 along with unit tests

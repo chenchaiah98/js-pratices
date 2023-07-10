@@ -1,3 +1,6 @@
+// interfaces & APIs:
+// *****
+
 // Start with unit test for below task
 
 // Use interface to define an User with below keys:
@@ -13,3 +16,21 @@
 //     Use a logger npm like morgan or winston
 
 
+interface data {
+    id:number;
+    name: string;
+    username:string;
+    email: number;
+  }
+  let url = `https://jsonplaceholder.typicode.com/users/`
+function fetchFunction(url1){
+    fetch(url1)
+    .then((responce)=>
+    {
+        responce.json();
+    })
+    .then((userData)=>{
+        console.log(userData);
+    })
+}
+fetchFunction(url);
