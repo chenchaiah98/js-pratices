@@ -1,6 +1,8 @@
 // interfaces & APIs:
 // *****
 
+import { userInfo } from "os";
+
 // Start with unit test for below task
 
 // Use interface to define an User with below keys:
@@ -22,9 +24,9 @@ interface data {
     username:string;
     email: number;
   }
-  let url = `https://jsonplaceholder.typicode.com/users/`
-function fetchFunction(url1){
-    fetch(url1)
+  let url = `https://jsonplaceholder.typicode.com/users/${userInfo}`
+function fetchFunction(url){
+    fetch(url)
     .then((responce)=>
     {
         responce.json();
