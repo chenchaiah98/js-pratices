@@ -1,7 +1,7 @@
 // interfaces & APIs:
 // *****
 
-import { userInfo } from "os";
+// import { userInfo } from "os";
 
 // Start with unit test for below task
 
@@ -22,9 +22,10 @@ interface data {
     id:number;
     name: string;
     username:string;
-    email: number;
+    email: string;
   }
-  let url = `https://jsonplaceholder.typicode.com/users/${userInfo}`
+
+  let url = `https://jsonplaceholder.typicode.com/users/1`
 function fetchFunction(url){
     fetch(url)
     .then((responce)=>
